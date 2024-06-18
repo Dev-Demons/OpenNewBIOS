@@ -1,0 +1,505 @@
+                                                                   Revision : 01
+--------------------------------------------------------------------------------
+Software name      BIOS Update CD
+                   (ISO image file for bootable CD)
+
+Support model      ThinkPad T450 
+                   ThinkPad T450s
+
+Operating Systems  Microsoft Windows 10  64-bit
+                   Microsoft Windows 8.1 32-bit, 64-bit   
+                   Microsoft Windows 7   32-bit, 64-bit 
+
+                   Refer to marketing materials to find out what computer models
+                   support which Operating Systems.
+
+Version            1.37 BIOS ID: (JBET73WW)     
+
+
+--------------------------------------------------------------------------------
+WHAT THIS PACKAGE DOES
+
+  This package provides the ISO image file of UEFI BIOS which is compatible with
+  CD/DVD/BD writing software to create the CD/DVD/BD for the UEFI BIOS update.
+  Hereafter the CD/DVD/BD for the UEFI BIOS update is called as "BIOS Update CD".
+
+  The BIOS Update CD can boot the computer disregarding the operating systems
+  and update the UEFI BIOS (including system program and Embedded Controller
+  program) stored in the Lenovo computer to fix problems, add new functions,
+  or expand functions as noted below.
+
+  For that purpose, it is necessary to have the CD/DVD/BD writing software (with
+  CD/DVD/BD creation function from the ISO image file) prepared separately.
+
+  Also, any one of the following types of CD-RW, CD-RW & DVD Combo, DVD, DVD
+  Multi, BD or other optical drives should be prepared. (Hereafter these drives
+  are called as "optical drive".)
+  - USB
+
+  This program is language independent and can be used with any language system.
+
+--------------------------------------------------------------------------------
+CHANGES IN THIS RELEASE
+  Version 1.37
+
+[Important updates]
+- Enhancement to address security vulnerability CVE-2018-12126, (https://cve.mitre.org/cgibin/cvename.cgi?name=CVE-2018-12126) anticipated to be published 05/14/2019.
+  Enhancement to address security vulnerability CVE-2018-12127, (https://cve.mitre.org/cgibin/cvename.cgi?name=CVE-2018-12127) anticipated to be published 05/14/2019.
+  Enhancement to address security vulnerability CVE-2018-12130, (https://cve.mitre.org/cgibin/cvename.cgi?name=CVE-2018-12130) anticipated to be published 05/14/2019.
+
+
+[New functions or enhancements]
+  Nothing.
+
+[Problem fixes]
+  Nothing.
+
+--------------------------------------------------------------------------------
+DETERMINING WHICH VERSION IS INSTALLED
+
+  There are two ways to check the UEFI BIOS version and BIOS ID.
+
+
+ [Checking on Windows]
+
+  Windows 7:
+
+  1. Click Start, click All Programs or Programs, click Accessories, click
+     System Tools and then click System Information.
+     - or -
+     Click Start, type msinfo32 in the Start Search box and then click msinfo32
+     in the Programs list.
+  2. On the System Information window, make sure System Summary is selected in
+     the left side of the window.
+  3. Locate the BIOS version/date line in the right side of the window.
+     "LENOVO BIOS ID (BIOS version), date" will be shown.
+
+  If you are prompted for an administrator password or confirmation, type your
+  password, or click Continue.
+
+ [Checking on Lenovo Setup]
+
+  1. Turn off the computer.
+  2. Turn on the computer.
+  3. While the "To interrupt normal startup, press Enter"
+     message is displayed at the lower-left area of the screen, press the F1 key.
+     The BIOS Setup Utility menu will be displayed. If a password prompt appears,
+     type the correct password.
+  4. Locate the UEFI BIOS Version line and Embedded Controller Version line.
+     "UEFI BIOS version (BIOS ID)" will be shown on the UEFI BIOS Version line.
+  5. Turn off the computer.
+
+
+--------------------------------------------------------------------------------
+NOTES
+
+- You should install the CD/DVD/BD writing software which supports CD/DVD/BD
+  creation function from the ISO image file to create the BIOS Update CD.
+
+- To boot the computer from the BIOS Update CD, you should have any one of the
+  following types of optical drives.
+  - USB
+  Any types of other optical device like ExpressCard device are not supported.
+
+- To boot the computer from the BIOS Update CD, you may need to change the boot
+  device setting in your Lenovo computer. Refer to the "Prepare boot device"
+  section in this document.
+
+- The contents of the BIOS Update CD can not be shown by Windows Explorer.
+
+
+--------------------------------------------------------------------------------
+CREATING THE BIOS UPDATE CD
+
+  This section assumes to use Internet Explorer and Windows Explorer.
+
+  Downloading file
+  1. Click once on the underlined file name. Once this is done, some pop-up
+     windows will appear.
+  2. Follow the instructions on the screen.
+  3. In the window to choose Run or Save, click Save.
+  4. Choose the folder you would like to download the file to and click Save.
+     A different window will appear and the download will begin and complete.
+     Once the download has completed, there may or may not be a message stating
+     that the download completed successfully.
+
+  Creating BIOS Update CD
+  5. Prepare a computer with an optical drive installed and a blank CD/DVD/BD
+     disc, and make sure the CD/DVD/BD writing software is installed into the
+     computer.
+  6. Locate the folder where the file was downloaded.
+  7. Locate the file ending in ".ISO" that was downloaded, then double-click it.
+     A writing software will open.
+  8. Follow the instructions on the screen to finish writing and complete
+     creating BIOS Update CD.
+
+  Finally delete the file saved in the step 4.
+
+
+--------------------------------------------------------------------------------
+PREPARING THE BOOT DEVICE
+
+  Confirm that the BIOS CD is set up as bootable and an optical drive is in the
+  boot device list of your Lenovo Setup.
+
+  1. Power off the computer.
+  2. Power on the computer.
+  3. While the "To interrupt normal startup, press the blue OKR button"
+     message is displayed at the lower-left area of the screen, press the F1 key.
+     The BIOS Setup Utility menu will be displayed. If a password prompt appears,
+     type the correct password.
+  4. Choose "Startup" from the menu.
+  5. In "UEFI/Legacy Boot", make sure "Both" or "Legacy Only" is chosen.
+  6. Choose "Boot" from the menu. Note the current boot priority order for
+     restoration later if you need to modify your boot list.
+  7. In "Boot Priority Order", make sure the following device is on top of
+     "ATA HDD0".
+     - "ATAPI CD0" (when using a internal optical drive)
+     - "USB CD"    (when using a USB optical drive)
+  8. Press the ESC key several times to enter Restart menu and choose
+     "Exit Discarding Changes" to exit from Lenovo Setup, or press the F10 key
+     to save the new setup and then select Yes.
+  9. Restart the computer.
+
+
+--------------------------------------------------------------------------------
+UPDATING THE UEFI BIOS
+
+Notes:
+- If your computer runs satisfactorily now, it may not be necessary to update
+  the UEFI BIOS. To determine if you should update the UEFI BIOS, refer to the
+  Version Information section.
+- You need an AC adapter, a charged battery pack and any one of the following
+  types of optical drives.
+  - USB
+- Remove the Power-on password prior to updating the UEFI BIOS in the remote
+  deployment environments.
+
+
+Attention:
+  Do not turn off, suspend the computer or remove the BIOS UPDATE CD until
+  the update has been completed. IF YOU DO THAT WHILE THE UPDATE IS STILL
+  IN PROGRESS, THE SYSTEM BOARD MAY HAVE TO BE REPLACED.
+
+
+  1. Firmly connect the AC adapter to the target computer.
+  2. Make sure your computer has an optical drive installed.
+  3. Insert the BIOS Update CD into the optical drive and turn on the computer.
+  4. Select Read this first from the menu and carefully read the information.
+  5. Press the Esc key to return to the menu.
+  6. Select Update system program and follow the instructions on the screen.
+  7. After the information panel appears, remove the BIOS Update CD from the
+     optical drive then press the Enter key to restart the computer.
+
+
+--------------------------------------------------------------------------------
+INITIALIZING UEFI BIOS
+
+  UEFI BIOS Initialization is suggested for some problems. To initialize the
+  UEFI BIOS settings:
+
+  1. Turn off the computer.
+  2. Turn on the computer.
+  3. While the "To interrupt normal startup, press the OKR button"
+     message is displayed at the lower-left area of the screen, press the F1 key.
+     The BIOS Setup Utility menu will be displayed. If a password prompt appears,
+     type the correct password.
+  4. Press the F9 key to load default configuration.
+  5. Select Yes.
+  6. Press the F10 key to save default configuration and exit.
+  7. Select Yes.
+  8. Restart the computer.
+
+  Note:
+  After initialization you may need to reapply some settings that you had
+  changed previously.
+
+
+--------------------------------------------------------------------------------
+VERSION INFORMATION
+
+  The following versions of UEFI BIOS and ECP (Embedded Controller Program) have
+  been released to date.
+
+
+(BIOS ID: JBET70WW)
+-------------------
+
+  Package      BIOS  (BIOS ID)   ECP   (ECP ID)      Rev.  Issue Date
+  ---------    ----------------  ----------------    ----  ---------------
+  1.37	       1.37  (JBET73WW)  1.04  (JBHT17WW)    01    2019/08/20
+  1.36	       1.36  (JBET72WW)  1.04  (JBHT17WW)    01    2019/04/22
+  1.35	       1.35  (JBET71WW)  1.04  (JBHT17WW)    01    2018/09/27 
+  1.34	       1.34  (JBET70WW)  1.04  (JBHT17WW)    01    2018/06/26 
+  1.33	       1.33  (JBET69WW)  1.04  (JBHT17WW)    01    2018/04/19 
+  1.32	       1.32  (JBET68WW)  1.04  (JBHT17WW)    01    2018/03/09 
+  1.31	       1.31  (JBET67WW)  1.04  (JBHT17WW)    01    2018/01/03
+  1.30	       1.30  (JBET66WW)  1.04  (JBHT17WW)    01    2017/09/21
+  1.29	       1.29  (JBET65WW)  1.04  (JBHT17WW)    01    2017/07/11
+  1.28	       1.28  (JBET64WW)  1.04  (JBHT17WW)    01    2017/03/28 
+  1.27	       1.27  (JBET63WW)  1.04  (JBHT17WW)    01    2016/11/28 
+  1.26	       1.26  (JBET62WW)  1.04  (JBHT17WW)    01    2016/09/26  
+  1.25	       1.25  (JBET61WW)  1.04  (JBHT17WW)    01    2016/07/22  
+  1.24	       1.24  (JBET60WW)  1.04  (JBHT17WW)    01    2016/06/14 
+  1.23	       1.22  (JBET57WW)  1.04  (JBHT17WW)    01    2016/04/07
+  1.22	       1.21  (JBET56WW)  1.04  (JBHT17WW)    01    2016/03/04
+  1.21	       1.21  (JBET56WW)  1.03  (JBHT16WW)    01    2016/02/23    
+  1.20	       1.20  (JBET55WW)  1.02  (JBHT15WW)    01    2016/01/07
+  1.19	       1.19  (JBET54WW)  1.02  (JBHT15WW)    01    2015/11/20 
+  1.18	       1.18  (JBET53WW)  1.02  (JBHT15WW)    01    2015/09/23  
+  1.17	       1.17  (JBET52WW)  1.01  (JBHT14WW)    01    2015/09/07  
+  1.16	       1.16  (JBET51WW)  1.01  (JBHT14WW)    01    2015/07/28
+  1.15	       1.15  (JBET50WW)  1.00  (JBHT13WW)    01    2015/06/24 
+  1.14	       1.14  (JBET49WW)  1.00  (JBHT13WW)    01    2015/05/25 
+  1.13	       1.13  (JBET48WW)  1.00  (JBHT13WW)    01    2015/05/07
+  1.12	       1.12  (JBET47WW)  1.00  (JBHT13WW)    01    2015/04/02
+  1.10	       1.10  (JBET45WW)  1.00  (JBHT13WW)    01    2015/02/25
+  1.04	       1.04  (JBET39WW)  1.00  (JBHT13WW)    01	   2015/01/13
+  
+  Note: Revision number (Rev.) is for administrative purpose of this README
+        document and is not related to software version. There is no need to
+        upgrade this software when the revision number changes.
+
+  To check the version of UEFI BIOS and Embedded Controller Program, refer to
+  the Determining which version is installed section.
+
+
+Summary of Changes
+
+  Where: <   >        Package version
+         UEFI:        UEFI BIOS version
+         ECP:         Embedded Controller Program version
+         [Important]  Important update
+         (New)        New function or enhancement
+         (Fix)        Correction to existing function
+
+-------------------
+(BIOS ID: JBET73WW)
+-------------------
+<1.37>
+[Important] Update includes a security fix.
+
+<1.36>
+[Important] Update includes a security fix.
+- (Fix) Fixed an issue where Windows 10 may fail to startup on certain the system 
+        that have less than 8 GB of RAM after installing KB4467691.
+
+<1.35>
+[Important] Update includes a security fix.
+[Important] Added Hyper Threading enable/disable option to ThinkPad Setup for virtualized 
+  system users in order to address LEN-24163 L1 Terminal Fault Side Channel 
+  Vulnerabilities (CVE-2018-3646) Refer to Lenovo's Security Advisory page for
+  additional information.(https://support.lenovo.com/us/en/solutions/LEN-24163)
+  (NOTE) Disabling Hyper Threading may increase system power consumption during sleep.
+- (Fix) Fixed BIOS silent update with system account.
+
+<1.34>
+- [Important updates] Security fix addresses LEN-22133 Speculative Execution Side Channel Variants 4 and 3a (CVE-2018-3639, CVE-2018-3640). 
+
+<1.33>
+- [Important] Security fix addresses LEN-19568 Intel Active Management Technology MEBx Access Control Bypass.
+
+<1.32>
+- [Important] Enhancement to address CVE-2017-5715.
+
+<1.31>
+- [Important] Enhancement to address CVE-2017-5715.
+
+<1.30>
+- [Important] Update includes a security fix.
+              (Note)
+              If the UEFI BIOS has been updated to 1.30 or higher,
+              it is no longer able to roll back to the version before 1.30
+              for security improvement.
+
+<1.29>
+- (New) Updated the CPU microcode.
+- (Fix) Fixed an issue of lock UEFI BIOS settings.
+- (Fix) Fixed an issue USB HDD device exists in PCI LAN on BIOS Setup/Boot Menu.
+- (Fix) Fixed some security fixes.
+- (Fix) Fixed an issue that SVP verification failed after ReadyBoost.
+
+<1.28>
+-(Fix) Rollback InRom Diagnostic version to 02.09.09.
+
+<1.27>
+- (Fix) Fix USB key listed in PCI LAN item in boot menu.
+- (New) Updated the Diagnostics module to version 03.07.001.
+
+<1.26>
+- (New) Updated for Security fix
+- (New) Updated the Diagnostics module to version 2.09.09.
+- (Fix) Fixed system may hang windows splash logo after update BIOS v1.25.
+
+<1.25>
+- (New) Updated for Security fix addresses LEN-8324 System Management Mode (SMM) BIOS Vulnerability and some security fixes.
+
+
+<1.24>
+- (New) Updated InRom diagnostic.
+- (New) Updated the CPU microcode.
+- (Fix) Fixed an issue related to SVP storing failure after the WMI packet processing
+
+<1.22>
+- (New) Updated the CPU microcode.
+- (Fix) Fixed an issue where system might not resume from hibernate with Intel PTT on Windows 10.
+- (Fix) Fixed an issue where Intel Rapid Start Technology might not work on Windows 10.
+- (Fix) Fixed an issue where display might only on external monitor after lid resume from S3 with Intel PTT.
+
+<1.21>
+- (New) Updated BIOS flash tool.
+- (New) Modified UEFI PXE resolution.
+- (New) Removed the intruder function to turn off when LID is open.
+- (Fix) Fixed an issue related to system unable to power on due to chipset hang in some specific situation.
+- (Fix) Fixed an issue related to screen resolution abnormal during UEFI PXE boot.
+- (Fix) Fixed an issue related to SVP clear not working with SRsetupwin tool
+
+<1.21>  (Drop)
+- (New) Modified UEFI PXE resolution
+- (New) Removed the intruder function to turn off when LID is open.
+- (Fix) Fixed an issue related to screen resolution abnormal during UEFI PXE boot.
+- (Fix) Fixed an issue related to SVP clear not working with SRsetupwin tool
+
+<1.20>
+- (New) Improved windows 7 32-bit OS available memory size.
+- (New) Updated EDID table for new panel.
+- (New) Updated Haswell C0/D0 MCU to 0000001Dh (M7240651_0000001D)
+- (New) Updated Broadwell E0/F0 MCU to 00000022h (MC0306D4_00000022)
+- (New) Supported multiple Legacy USB LAN Option ROMs.
+- (New) Supported the Internal storage tamper detection.
+- (Fix) Fixed an issue related to incorrect password behavior at unattended boot.
+- (Fix) Fixed an issue related to BIOS windows flash failure with Intel PTT/windows 10.
+- (Fix) Fixed an issue related SMM stack leak in SmiFlashAllow.
+
+<1.19>
+- (New) Updated verbtable for noise.
+- (New) Changed Haswell + N16s Tolud.
+- (New) Updated Winuptp & Winuptp64.
+- (Fix) Fixed an issue that srsetupwin fails to install pop/hdp with clearing SVP.
+- (Fix) Fixed an issue related to SCCM 80070490 error when HDP is set.
+- (Fix) Fixed an issue related to silent install auto restart issue.
+
+<1.18>
+- (New) Reduced noise. 
+- (New) Updated ME 10.0.46.1002.
+- (New) Changed temperature of PCH to calculate rolling average.
+
+<1.17>
+- (New) Added win10 support.
+- (New) Enabled N25Q128 SPI ROM support.
+- (New) Added security fix addresses LEN-2015-002 SMM "Incursion" Attack.
+- (New) Included security fixies.
+- (New) Added new incompatibility bit for Back Flash Prevention.
+
+<1.16>
+- (New) Added option to force setting IGD Core Display Clock as 675MHz 
+- (New) Updated Intel RC to 2.8.0
+- (New) Core Updated v415 for Security concern.
+- (New) Code preparation for CS13 keyboard Fn key feature enhancement
+- (New) Updated the Computrace module to 945_VN
+- (New) Updated help description for Fn Primary function on BIOS setup.
+- (New) Updated Broadwell E0/F0 MCU to 0000001Fh (MC0306D4_0000001F)
+- (New) Enabled CS13 keyboard Fn key feature enhancement
+- (New) Core Updated for SMM vulnerability.
+- (New) Prevent SMI handler from calling non SMM code like gBS and gRT services at runtime.
+- (New) Enabled Option LENOVO_FORCE_IGD_CDCLK_675MHZ
+- (New) Enabled WUFU support
+- (New) Core Updated for the CD-ROM boot fail if the boot mode is legacy first
+- (New) Updated Broadwell E0/F0 MCU to 00000021h (MC0306D4_00000021)
+- (New) Supported the classic top row keyboard.
+- (New) Shown Fn state on the Fn Lock LED
+- (Fix) Fixed an issue related to the invalid value of pending TPM operation request.
+- (Fix) Fixed an issue related to SMM attack vulnerability.
+- (Fix) Fixed an issue related to Noisy caps issue.
+- (Fix) Fixed an issue related to 4-4-4-4 beep error during flash BIOS update.
+
+<1.15>
+- (Fix) Fixed an issue related to SCCM deployment error under UEFI mode.
+- (New) Supported the Password after Boot Device List.
+- (New) Core updated #119968: Added Microsoft revocation file list in dbx factory default.
+- (New) Added recursive HDD connect list.
+- (New) Added SK-Hynix 8G onboard memory SPD data.
+- (New) Added back flash function for SK-Hynix 8G 
+
+<1.14>
+- (Fix) Fixed an issue related to Haswell downgrade to nonVpro impact to AMT function.
+- (Fix) Fixed an issue related to WWAN lost when USB3.0 enabled.
+- (Fix) Fixed an issue related to LDCD brightness can't change on FHD panel.
+- (Fix) Fixed an issue related to screen flash when boot into setup menu in UEFI mode.
+
+<1.13>
+- (Fix) Fixed an BSOD issue related to CPU microcode.
+- (New) Enabled ME ITA funtion.
+- (New) Added ITA USB devices node for Logo issue.
+- (New) Updated EDID table.
+- (New) Updated Flash driver to ver 1.0.3.0
+- (New) Added Windows10 detection.
+- (New) Code preparation for Intel NFF support.
+- (New) Performed vPro downgrade for HSW-ULT.
+- (New) Enabled NFF support for Intel Technology Access
+- (New) Updated Broadwell E0/F0 MCU to 0000001Dh (MC0306D4_0000001D)
+- (New) CoreUpdated v415 for Security concern.
+- (New) Updated ME Region to ME Firmware N10RM29W （10.0.38.1000)
+
+<1.12>
+- (New) Enabled pTRR on Broadwell and 2x refresh on Haswell.
+
+<1.10>
+- (Fix) Fixed an issue related to boot failure when installing WinMagic SecureDoc.
+- (Fix) Fixed an issue related to BSOD 0X113 and 0x7E.
+- (Fix) Fixed an issue related to Write Image BSOD 0x3B.
+
+<1.04>
+- (New) Initial release for ThinkPad T450, T450s.
+
+--------------------------------------------------------------------------------
+UEFI BIOS INFORMATION
+
+Memory Map Information
+----------------------
+
+
+Reserved Area:
+The following conventional memory addresses are reserved by the UEFI BIOS and
+others.
+
+  C0000-CFFFF : Reserved for Video BIOS
+  D0000-D0FFF : Reserved for Option ROM of Ethernet (*a)
+  E0000-FFFFF : Reserved for System BIOS
+
+  *a: This area will be released in case of Ethernet LAN Option ROM was NOT used
+      at system boot.
+
+
+Usable Area:
+The following memory address can be used by the memory manager such as EMM386.
+
+  D0000-DFFFF or D1000-DFFFF (*b)
+
+  *b: Memory address will be changed to D1000-DFFFF when Ethernet LAN Option ROM
+      was used at system boot.
+
+  Note:
+  Certain addresses in this area will be reserved for optional devices by
+  Operating Systems. The addresses vary and depend on the design of each
+  Operating System.
+
+
+--------------------------------------------------------------------------------
+LIMITATIONS
+
+  Nothing.
+
+
+--------------------------------------------------------------------------------
+TRADEMARKS
+
+* Lenovo are registered trademarks of Lenovo.
+* Rescue and Recovery is a trademark of Lenovo.
+
+* Intel is a registered trademark of Intel Corporation.
+* Microsoft, BitLocker, Windows are registered trademarks of
+  Microsoft Corporation.
+
+Other company, product, and service names may be registered trademarks,
+trademarks or service marks of others.

@@ -1,0 +1,233 @@
+                                                                   Revision : 01
+--------------------------------------------------------------------------------
+Software name      ThinkPad Setup Settings Capture/Playback Utility for Windows
+                   (SRSETUPEWIN)
+
+    
+Support models     ThinkPad E450, E550, E450c, E550c
+		   ThinkPad E455, E555
+		   ThinkPad L440, L540 , L450
+	           ThinkPad T450, T450s
+		   ThinkPad S3 Yoga 14
+		   ThinkPad S1 Yoga 12
+                   ThinkPad 11e (Machine types: 20ED, 20EE, 20E6, 20E8)      
+		   ThinkPad Yoga 11e (Machine types: 20E5, 20E7) 
+
+Operating Systems  Microsoft Windows 8.1  32-bit, 64-bit
+                   Microsoft Windows 8  32-bit, 64-bit
+                   Microsoft Windows 7  32-bit, 64-bit
+                   Microsoft Windows XP  32-bit
+
+Version            2.12
+
+
+--------------------------------------------------------------------------------
+WHAT THIS PACKAGE DOES
+
+  ThinkPad stores various UEFI BIOS settings in its nonvolatile memory like
+  Flash or EEPROM. These settings are configured by using the ThinkPad Setup
+  menu. In general, this is done manually by the user. However, from a
+  deployment point of view, the ThinkPad Setup settings are expected to be
+  common to all machines and to be controlled remotely.
+  This software is a Windows application for this purpose.
+
+  Features:
+  - Copy UEFI BIOS setup data settings
+  - Copy UEFI BIOS secure data settings
+  - Install and update for power-on password
+  - Install for hard disk password
+  - Copy supervisor password.
+
+ 
+  This program is language independent and can be used with any language system.
+
+--------------------------------------------------------------------------------
+CHANGES IN THIS RELEASE
+  Version 2.12
+
+[Important updates]
+  Nothing.
+
+[New functions or enhancements]
+- Updated copyright 2015
+
+[Problem fixes]
+- Nothing.
+
+--------------------------------------------------------------------------------
+DETERMINING WHICH VERSION IS INSTALLED
+
+  Run SRSETUPEWIN32.EXE/SRSETUPEWIN64.EXE with no parameter at the command prompt.
+  Version information is displayed on the screen.
+
+
+--------------------------------------------------------------------------------
+NOTES
+
+- Both the donor ThinkPad and a target ThinkPad must have the same UEFI BIOS
+  Level.
+
+
+--------------------------------------------------------------------------------
+HOW TO USE THE SOFTWARE
+
+Note:
+- If your computer runs satisfactorily now, it may not be necessary to update
+  the software. To determine if you should update the software, refer to the
+  Version Information section.
+- You do not have to install the software. You need to copy SRSETUPEWIN32.EXE
+  and SRSWDRV32.SYS for 32bit Windows to the same directory and copy
+  SRSETUPEWIN64.exe and SRSWDRV64.SYS for 64bit Windows to the same directory.
+
+
+---------------------------------
+Capturing ThinkPad Setup Settings
+
+  Do the following procedures at a donor ThinkPad:
+
+  (Setting up a donor ThinkPad)
+  1. Turn off the computer.
+  2. Turn on the computer.
+  3. While the following messages is displayed at the lower-left area of the
+     screen, press the F1 key.
+       To interrupt normal startup, press Enter
+     The ThinkPad Setup menu will be displayed. If a password prompt appears,
+     type the correct password.
+  4. Change and save the desired settings as required. It is recommneded that
+     the supervisor password is set at this time. This supervior password is
+     copied to a target ThinkPad.
+  5. Exit from the ThinkPad Setup and restart the computer.
+  6. Ensure that the donor ThinkPad starts up and functions properly.
+
+  (Starting capture)
+  7. Boot Windows.
+  8. For 32bit Windows, prepare SRSETUPEWIN32.EXE and SRSWDRV32.SYS to the same
+     directory. For 64bit Windows, prepare SRSETUPEWIN64.EXE and SRSWDRV64.SYS
+     to the same directory.
+  9. Open Command Prompt as "Run as Administrator"
+ 10. At the command line, execute SRSETUPEWIN.EXE with the /c option.
+       Example: SRSETUPEWIN.EXE \path\file_name /c
+     Where \path\file_name is the path and file name of ThinkPad Setup Settings
+     file to be created.
+
+
+  (Capture options)
+   [Secure data and Supervisor password]
+     SRSETUPEWIN can capture UEFI BIOS secure data that includes a supervisor
+     password. The captured data has an encrypted supervisor password of the
+     donor ThinkPad. To capture the supervisor password, add the /kpap option to
+     enter the password by the keyboard.
+       Example: SRSETUPEWIN.EXE \path\file_name /c /kpap
+
+   [Power-on password and Hard disk password]
+     SRSETUPEWIN can deploy power-on password and hard disk password. To set the
+     power-on password and hard disk password at the target ThinkPad computers,
+     create a password.txt file (any name), add the /EP password.txt options.
+       Example: SRSETUPEWIN.EXE \path\file_name /c /EP password.txt
+     Where password.txt contains the names of UEFI BIOS settings files for each
+     of target ThinkPad computers, the power-on password and the hard disk
+     password. "Sample.txt" shows the format of .csv file.
+
+     If the supervisor password is set on a donor ThinkPad, add the /kpap option
+     to enter the password by the keyboard.
+       Example: SRSETUPEWIN.EXE \path\file_name /c /kpap /EP password.txt
+     In this case, the ThinkPad Setup Settings file contains a supervisor
+     password.
+
+     WARNING:
+     This process creates an intermediate file that contains the power-on
+     password, hard disk password and a pointer to the system that these
+     passwords are intended to be installed on. Be sure to treat this
+     intermediate file as a potential security exposure that exists until the
+     reset process is complete. Be sure to transmit the file securely to the
+     target system and to destroy the file when finished. Examples of secure
+     transmission include carrying the file on removable media to the target
+     system or encrypting the file before transmission over the network to the
+     target system.
+
+------------------------------------
+Playing Back ThinkPad Setup Settings
+
+  Do the following procedures at a target ThinkPad:
+
+  (Starting playback)
+  1. Set supervisor password to a target ThinkPad.
+  2. Boot Windows.
+  3. For 32bit Windows, prepare SRSETUPEWIN32.EXE and SRSWDRV32.SYS to the same
+     directory. For 64bit Windows, prepare SRSETUPEWIN64.EXE and SRSWDRV64.SYS
+     to the same directory.
+  4. Copy the ThinkPad Setup Settings file in the step 10 of the "Capturing
+     ThinkPad Setup Settings".
+  5. Open Command Prompt as "Run as Administrator"
+  6. At the command line, execute SRSETUPEWIN.EXE with the /u option.
+       Example: SRSETUPEWIN.EXE \path\file_name /u /kpap
+     Where \path\file_name is the path and file name of ThinkPad Setup Settings
+     file. And type the superviosr password setting in Step1.
+  4. Restart, the computer.
+
+  (Notes)
+   A target ThinkPad must have superviosr password beforehand.
+
+   [Power-on password and Hard disk password]
+     If the target computer already has a power-on password and/or a hard disk
+     password, you can not set the passwords by SRSETUPEWIN. You must remove the
+     passwords by ThinkPad Setup Utility at the target computer.
+
+   When Secure Boot of the target ThinkPad is Enabled, its Secure Boot setting
+   can not be changed to Disabled even when the Secure Boot setting of the donar
+   ThinkPad is Disabled.
+
+
+--------------------------------------------------------------------------------
+VERSION INFORMATION
+
+  The following versions have been released to date.
+
+  Version    Rev.  Issue Date
+  -------    ----  ------------
+  2.12       01    2015/05/19
+  2.11       01    2015/04/08
+  2.01       01    2015/03/30
+ 
+  
+
+  Note: Revision number (Rev.) is for administrative purpose of this README
+        document and is not related to software version. There is no need to
+        upgrade this software when the revision number changes.
+
+  To check the version of software, refer to the Determining which version is
+  installed section.
+
+
+Summary of Changes
+
+  Where: <   >        Version number
+         [Important]  Important update
+         (New)        New function or enhancement
+         (Fix)        Correction to existing function
+<2.12>
+- (New) Updated the copyright 2015.
+
+<2.11>
+- (New) Supported hidden option to switch PTT and dTPM1.2.
+- (Fix) Fixed an issue that no error is reported with an invalid file name when update
+        process.
+<2.01>
+ - (New) Initial release.
+
+
+--------------------------------------------------------------------------------
+LIMITATIONS
+
+  Nothing.
+
+
+--------------------------------------------------------------------------------
+TRADEMARKS
+
+* Lenovo and ThinkPad are registered trademarks of Lenovo.
+
+* Microsoft and Windows are registered trademarks of Microsoft Corporation.
+
+Other company, product, and service names may be registered trademarks,
+trademarks or service marks of others.
